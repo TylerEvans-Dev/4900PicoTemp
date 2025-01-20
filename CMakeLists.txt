@@ -21,6 +21,7 @@ project(robo C CXX ASM)
 #this inits the pico sdk
 pico_sdk_init()
 
+#this configs the cores and exits when an issue occurs will boot into the boot
 add_compile_definitions(
     configNUMBER_OF_CORES=1
     PICO_ENTER_USB_BOOT_ON_EXIT=1
