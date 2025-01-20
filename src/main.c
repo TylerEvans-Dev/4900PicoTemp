@@ -1,15 +1,12 @@
-#include <hardware/gpio.h>
-#include <pico/time.h>
-#include <stdio.h>
-#include "FreeRTOS.h"
-#include "pico/stdlib.h"
-#include "pico/multicore.h"
-#include "pico/cyw43_arch.h"
+#include "mainConfig.h"
 
+const char hello[13] = "hello world\n";
 int main(){
     //this inits the stdio
     stdio_init_all();
-    printf("hello world\n");
+
+    //do not worry about printf as the function will still work
+    printf(hello);
     gpio_init(CYW43_WL_GPIO_LED_PIN);
 
 
