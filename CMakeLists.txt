@@ -1,12 +1,11 @@
 #sets the min.
 
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
-set(sdkVersion 2.0.0)
-set(toolchainVersion 13_2_Rel1)
-set(picotoolVersion 2.1.0)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 #sets the board
 set(PICO_BOARD pico_w CACHE STRING "Board type")
@@ -20,6 +19,10 @@ include(lib/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_impor
 project(robo C CXX ASM)
 #this inits the pico sdk
 pico_sdk_init()
+
+set(sdkVersion 2.0.0)
+set(toolchainVersion 13_2_Rel1)
+set(picotoolVersion 2.1.0)
 
 #this configs the cores and exits when an issue occurs will boot into the boot
 add_compile_definitions(
@@ -35,6 +38,13 @@ add_executable(robo src/main.c)
 #here I am setting the name of program, and the version.
 pico_set_program_name(robo "robo")
 pico_set_program_version(robo "0.1")
+
+#this enables uart comuncation
+pico_enable_stdio_uart(robo 0)
+#this enables usb comunciation
+pico_enable_stdio_usb(robo 1)
+
+
 
 #adding needed libs
 target_link_libraries(robo PRIVATE pico_stdlib pico_multicore pico_async_context_freertos FreeRTOS-Kernel-Heap4)
