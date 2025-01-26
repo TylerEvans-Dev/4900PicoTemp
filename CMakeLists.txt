@@ -22,7 +22,7 @@ pico_sdk_init()
 
 set(sdkVersion 2.0.0)
 set(toolchainVersion 13_2_Rel1)
-set(picotoolVersion 2.1.0)
+#set(picotoolVersion 2.1.0)
 
 #this configs the cores and exits when an issue occurs will boot into the boot
 add_compile_definitions(

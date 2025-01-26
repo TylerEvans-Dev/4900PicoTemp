@@ -1,10 +1,11 @@
-#include "mainConfig.h"
+
 #include <hardware/gpio.h>
 #include <pico/cyw43_arch.h>
 #include <pico/time.h>
 
 const char hello[13] = "hello world ";
 const char name[4] = "robo";
+
 
 void task(void){
     int i =0;
