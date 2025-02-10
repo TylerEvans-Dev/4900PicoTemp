@@ -23,8 +23,10 @@ now copy the dir
 ``` git clone --recursive https://github.com/TylerEvans-Dev/4900PicoTemp.git  ```
 
 # making the build files
+change into the directory by using 
+``` cd 4900picotemp ```
 run the shell scrpit
-bash b.sh
+```bash b.sh```
 
 and then hold the pico bootsel plug in the pico via usb it will show up on windows file explorer find the ubuntu file
 go into home and then the file for the template file last of all go into build, and drag and drop the robo.uf2 file
